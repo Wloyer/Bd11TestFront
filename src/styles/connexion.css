@@ -1,0 +1,15 @@
+/* Importer les styles du fichier home.css */
+@import url("home.css");
+
+
+form {
+    margin: 0 auto;
+    width: 50%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+button[type="submit"] {
+    /* Ajouter les styles spécifiques aux boutons de soumission ici */
+}
