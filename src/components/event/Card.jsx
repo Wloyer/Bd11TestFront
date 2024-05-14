@@ -6,12 +6,6 @@ function CardHome() {
 
 return (
     <>
-         <div class="card">
-                <img src={decorated}  />
-                <div class="container">
-                    <button>En savoir plus</button>
-                </div>
-        </div>
     </>
 )
 }
