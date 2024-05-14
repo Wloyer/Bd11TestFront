@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '/public/logo.png';
 import { FaBars } from 'react-icons/fa'; // Importation de l'icône de menu burger
 
-function Navbar() {
+function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,4 +25,5 @@ function Navbar() {
   )
 }
 
-export default Navbar;
+export default NavBar
+
