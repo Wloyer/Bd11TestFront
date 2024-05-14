@@ -1,29 +1,82 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '/public/logo.png';
-import { FaBars } from 'react-icons/fa'; // Importation de l'icône de menu burger
+import React, { useEffect, useState } from "react";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import "../styles/navbar.scss";
+import logo from "../../public/logo.png"
 
-function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+function Navbar() {
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [size, setSize] = useState({
+    width: 0,
+    height: 0,
+  });
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+    window.addEventListener("resize", handleResize);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (size.width > 768 && menuOpen) {
+      setMenuOpen(false);
+    }
+  }, [size.width, menuOpen]);
+
+  const menuToggleHandler = () => {
+    setMenuOpen((p) => !p);
   };
 
   return (
-    <nav>
-      <img src={logo} alt='Eventmer' className="sitename" />
-      <button className={`menu-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        <FaBars />
-      </button>
-      <div className={`menu-links ${isOpen ? 'open' : ''}`}>
-        <Link to="/events" className="menu">Nos Events</Link>
-        <Link to="/tarifs" className="menu">Nos Tarifs</Link>
-        <Link to="/apropos" className="menu">À propos de nous</Link>
+    <header className="header">
+      <div className="header__content">
+        <Link to="/" className="header__content__logo">
+        <img src={logo} alt="Logo" />
+        </Link>
+        <nav
+          className={`${"header__content__nav"} 
+          ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
+          }`}
+        >
+          <ul>
+            <li>
+              <Link to="/">Events</Link>
+            </li>
+            <li>
+              <Link to="/profile">Tarifs</Link>
+            </li>
+            <li>
+              <Link to="/Works">à propos de nos</Link>
+            </li>
+            <li>
+              <Link to="/help">Faq</Link>
+            </li>
+
+            {/* <Link to="/register">
+              <button className="btn">Register</button>
+            </Link>
+            <Link to="/login">
+              <button className="btn btn__login">Login</button>
+            </Link> */}
+          </ul>
+        </nav>
+        <div className="header__content__toggle">
+          {!menuOpen ? (
+            <BiMenuAltRight onClick={menuToggleHandler} />
+          ) : (
+            <AiOutlineClose onClick={menuToggleHandler} />
+          )}
+        </div>
       </div>
-    </nav>
-  )
+    </header>
+  );
 }
 
-export default NavBar
-
+export default Navbar;
