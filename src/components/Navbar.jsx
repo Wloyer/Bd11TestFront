@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '/public/logo.png';
 
-function Navbar() {
+function NavBar() {
 
   return (
     <nav>
@@ -13,4 +13,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default NavBar
