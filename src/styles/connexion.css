@@ -21,9 +21,6 @@ input {
     box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
 }
 
-
-
-input[type="password"],
-button[type="submit"] {
+button{
     margin: 0 auto;
 }
