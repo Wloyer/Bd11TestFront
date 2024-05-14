@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/404.css'; 
+import '../styles/404.css';
 
 function Page404() {
     return (
@@ -9,11 +9,11 @@ function Page404() {
                 <div className="cloak__container">
                     <div className="cloak">
                         <div className="info" style={{ textAlign: 'center' }}>
-                            <h2>We can't find that page</h2>
+                            <h2>Page non retrouvé</h2>
                             <p>
-                                We're fairly sure that page used to be here, but seems to have gone missing. We do apologise on its behalf.
+                                Nous sommes presque sûrs que cette page existait auparavant, mais elle semble avoir disparu. Nous nous excusons en son nom.
                             </p>
-                            <button style={{ margin: '0 auto', textAlign: 'center' }}> <a style={{ }} href="/">Home</a></button>
+                            <button style={{ margin: '0 auto' }}> <a style={{}} href="/">Home</a></button>
                         </div>
                     </div>
                 </div>
