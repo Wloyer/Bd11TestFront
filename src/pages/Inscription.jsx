@@ -17,6 +17,7 @@ const Inscription = () => {
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" />
                 </div>
+                <button type="submit">S'inscrire</button>
             </form>
         </div>
     );
