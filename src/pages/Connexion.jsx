@@ -43,7 +43,7 @@ const Connexion = () => {
                     />
                 </div>
                 <br />
-                <button type="submit">Se connecter</button>
+                <button className='btn-connexion' type="submit">Se connecter</button>
             </form>
         </div>
     );
