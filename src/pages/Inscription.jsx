@@ -53,6 +53,7 @@ const Inscription = () => {
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
                 </div>
                 <div>
+
                     <label htmlFor="phone">Téléphone:</label>
                     <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
