@@ -19,6 +19,14 @@ const Inscription = () => {
                     <input type="email" id="email" name="email" />
                 </div>
                 <div>
+                    <label htmlFor="password">Mot de passe:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                    />
+                </div>
+                <div>
                     <label htmlFor="tel">Tel:</label>
                     <input type="tel" id="tel" name="tel" />
                 </div>
