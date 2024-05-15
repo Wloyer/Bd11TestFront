@@ -5,12 +5,12 @@ import "../styles/navbar.scss";
 
 const Inscription = () => {
     const [formData, setFormData] = useState({
-        nom: '',
-        prenom: '',
+        firstname: '',
+        lastname: '',
         email: '',
-        tel: '',
+        phone: '',
         birthdate: '',
-        ageConfirmed: false,
+        plainPassword: '',
         agreeTerms: false
     });
 
@@ -41,36 +41,28 @@ const Inscription = () => {
             <h1>Formulaire d'Inscription</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="nom">Nom:</label>
-                    <input type="text" id="nom" name="nom" value={formData.nom} onChange={handleChange} />
+                    <label htmlFor="firstname">Prénom:</label>
+                    <input type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="prenom">Prenom:</label>
-                    <input type="text" id="prenom" name="prenom" value={formData.prenom} onChange={handleChange} />
+                    <label htmlFor="lastname">Nom:</label>
+                    <input type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="tel">Tel:</label>
-                    <input type="tel" id="tel" name="tel" value={formData.tel} onChange={handleChange} />
+                    <label htmlFor="phone">Téléphone:</label>
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="birthdate">Date de naissance:</label>
                     <input type="date" id="birthdate" name="birthdate" value={formData.birthdate} onChange={handleChange} />
                 </div>
                 <div>
-                    <label htmlFor="ageConfirmed">
-                        <input
-                            type="checkbox"
-                            id="ageConfirmed"
-                            name="ageConfirmed"
-                            checked={formData.ageConfirmed}
-                            onChange={handleChange}
-                        />
-                        Je confirme que toutes les personnes avec moi ont l'âge requis pour participer.
-                    </label>
+                    <label htmlFor="plainPassword">Mot de passe:</label>
+                    <input type="password" id="plainPassword" name="plainPassword" value={formData.plainPassword} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="agreeTerms">
