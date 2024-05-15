@@ -14,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Page404 />} />
+        <Route path="/login" element={<Connexion />} />
+        <Route path="/register" element={<Inscription />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={<Inscription />} />
         <Route path="/create" element={<CreateEvent />} />
