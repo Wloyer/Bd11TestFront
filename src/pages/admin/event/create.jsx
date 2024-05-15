@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const CreateEvent = () => {
     const [eventData, setEventData] = useState({
-        scheduleId: '',
         name: '',
         price: '',
         eventHour: '',
@@ -37,7 +36,6 @@ const CreateEvent = () => {
             const response = await axios.post('http://localhost:8000/api/event/new', eventData);
             console.log('Événement créé avec succès:', response.data);
             setEventData({
-                scheduleId: '',
                 name: '',
                 price: '',
                 eventHour: '',
