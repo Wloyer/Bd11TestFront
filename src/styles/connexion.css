@@ -17,7 +17,21 @@ form {
     margin-bottom: 50px;
 }
 
-input {
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: aliceblue;
+}
+
+
+input[type="text"], input[type="number"], input[type="date"], input[type="time"], textarea {
     display: block;
     margin: 0 auto;
     width: 420px;
@@ -30,6 +44,7 @@ input {
     -moz-box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
     box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
 }
+
 button{
     display: block;
     margin: 0 auto;
@@ -48,3 +63,26 @@ button:hover{
     background:  rgb(32, 32, 32);
     color: rgb(162, 162, 246);
 }
+
+
+
+input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 10px;
+    transform: scale(1.5); 
+}
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    input[type="text"], input[type="number"], input[type="date"], input[type="time"], textarea {
+        width: 90%; /* Ajuster la largeur à 90% de l'écran */
+        padding: 12px; /* Réduire le padding pour les petits écrans */
+    }
+}
+
