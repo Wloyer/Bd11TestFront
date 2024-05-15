@@ -5,6 +5,7 @@ import Page404 from './pages/404';
 import Connexion from './pages/Connexion';   
 import Inscription from './pages/Inscription';
 import NavBar from './components/Navbar';
+import CreateEvent from './pages/admin/event/create';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="*" element={<Page404 />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={<Inscription />} />
+        <Route path="/create" element={<CreateEvent />} />
       </Routes>
 
     </>
