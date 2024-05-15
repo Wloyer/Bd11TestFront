@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/connexion.css';
+import "../styles/navbar.scss";
 const Inscription = () => {
     return (
         <div className="inscription-container">
@@ -17,7 +18,15 @@ const Inscription = () => {
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" />
                 </div>
-                <button type="submit">S'inscrire</button>
+                <div>
+                    <label htmlFor="tel">Tel:</label>
+                    <input type="tel" id="tel" name="tel" />
+                </div>
+                <div>
+                    <label htmlFor="birthdate">Date de naissance:</label>
+                    <input type="date" id="birthdate" name="birthdate" />
+                </div>
+                <button className='btn btn__login' type="submit">S'inscrire</button>
             </form>
         </div>
     );

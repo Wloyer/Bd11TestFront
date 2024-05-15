@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/connexion.css';
+import "../styles/navbar.scss";
+
 
 const Connexion = () => {
     const [email, setEmail] = useState('');
@@ -40,7 +42,7 @@ const Connexion = () => {
                         onChange={handlePasswordChange}
                     />
                 </div>
-                <button type="submit">Se connecter</button>
+                <button className='btn btn__login' type="submit">Se connecter</button>
             </form>
         </div>
     );
