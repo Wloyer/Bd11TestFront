@@ -106,7 +106,7 @@ body {
 
 
 
-.button {
+.custom-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +120,7 @@ body {
     z-index: 9999;
 }
 
-button {
+.custom-button button {
     height: 50px;
     width: 160px;
     clip-path: path("M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25");
@@ -139,6 +139,26 @@ button {
     transform: translateY(0px);
     transition: all 0.2s ease;
 }
+
+.custom-button span {
+    width: 100px;
+    height: 60px;
+    background-color: var(--primaryHi);
+    border-radius: 100%;
+    filter: blur(20px);
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.2s ease;
+}
+
+.custom-button:hover > span {
+    opacity: 60%;
+}
+
+.custom-button:hover > button {
+    transform: translateY(5px);
+}
+
 
 span {
     width: 100px;
