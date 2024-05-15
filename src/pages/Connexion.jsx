@@ -22,7 +22,7 @@ const Connexion = () => {
 
     return (
         <div className="connexion-container">
-            <h2>Connexion</h2>
+            <h1>Connexion</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
@@ -42,7 +42,8 @@ const Connexion = () => {
                         onChange={handlePasswordChange}
                     />
                 </div>
-                <button className='btn btn__login' type="submit">Se connecter</button>
+                <br />
+                <button type="submit">Se connecter</button>
             </form>
         </div>
     );

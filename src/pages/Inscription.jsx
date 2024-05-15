@@ -26,7 +26,8 @@ const Inscription = () => {
                     <label htmlFor="birthdate">Date de naissance:</label>
                     <input type="date" id="birthdate" name="birthdate" />
                 </div>
-                <button className='btn btn__login' type="submit">S'inscrire</button>
+                <br />
+                <button type="submit">S'inscrire</button>
             </form>
         </div>
     );
