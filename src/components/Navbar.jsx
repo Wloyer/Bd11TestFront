@@ -59,12 +59,12 @@ function Navbar() {
               <Link to="/help">Faq</Link>
             </li>
 
-            {/* <Link to="/register">
+            <Link to="/register">
               <button className="btn">Register</button>
             </Link>
             <Link to="/login">
               <button className="btn btn__login">Login</button>
-            </Link> */}
+            </Link>
           </ul>
         </nav>
         <div className="header__content__toggle">
