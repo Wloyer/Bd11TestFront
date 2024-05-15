@@ -3,7 +3,18 @@
 
 form {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+}
+ h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 
@@ -34,6 +45,26 @@ input[type="text"], input[type="number"], input[type="date"], input[type="time"]
     box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
 }
 
+button{
+    display: block;
+    margin: 0 auto;
+    width: justify-content;
+    padding: 16px;
+    color:  rgb(32, 32, 32);
+    background: rgb(162, 162, 246);
+    border: rgb(162, 162, 246) 1px solid;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
+    box-shadow: 0px 0px 20px 1px rgba(20, 65, 124, 0.8);
+}
+
+button:hover{
+    background:  rgb(32, 32, 32);
+    color: rgb(162, 162, 246);
+}
+
+
 
 input[type="checkbox"] {
     display: inline-block;
@@ -54,3 +85,4 @@ input[type="checkbox"] {
         padding: 12px; /* Réduire le padding pour les petits écrans */
     }
 }
+
