@@ -1,0 +1,118 @@
+.tarifs-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .pack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 12px;
+    background-color: #212121;
+    border: 1px solid #fff;
+    padding: 1.6rem;
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    width: 300px; /* Set a fixed width for consistency */
+    height: 500px; /* Set a fixed height for consistency */
+    text-align: center;
+  }
+  
+  .header-tarif {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 1rem;
+  }
+  
+  .title-tarif {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .price-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+  
+  .price-container span:first-child {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .price-container span:last-child {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .lists-tarif {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-grow: 1;
+  }
+  
+  .list-tarif {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .list-tarif span {
+    font-size: 1.5rem;
+    color: #4caf50;
+  }
+  
+  .list-tarif p {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #000;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .pack-container {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tarifs-container {
+      flex-direction: column; /* Stack cards vertically on very small screens */
+      align-items: center;
+    }
+    
+    .pack-container {
+      width: 90%; /* Slightly smaller width for better padding on small screens */
+    }
+  }
+  

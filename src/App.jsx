@@ -6,6 +6,7 @@ import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
 import NavBar from './components/Navbar';
 import CreateEvent from './pages/admin/event/create';
+import Tarif from './pages/Tarif';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route path="/register" element={<Inscription />} />
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={<Inscription />} />
-        <Route path="/create" element={<CreateEvent />} />
+        <Route path="/create" element={<CreateEvent/>} />
+        <Route path="/tarif" element={<Tarif/>} />
       </Routes>
 
     </>
