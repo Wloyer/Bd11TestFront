@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles/connexion.css';
 import "../styles/navbar.scss";
-
 
 const Connexion = () => {
     const [email, setEmail] = useState('');
@@ -17,7 +17,16 @@ const Connexion = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Ajoutez ici la logique de connexion
+
+        axios.post('http://localhost:8000/api/login', { _username: email, _password: password })
+            .then(response => {
+                console.log(response.data);
+                alert('Connexion réussie');
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+                alert('Erreur lors de la connexion');
+            });
     };
 
     return (
@@ -35,12 +44,7 @@ const Connexion = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Mot de passe:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                    />
+                    <input type="password" id="password" value={password} onChange={handlePasswordChange}/>
                 </div>
                 <br />
                 <button className='btn-connexion' type="submit">Se connecter</button>
