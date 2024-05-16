@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Cookies from 'js-cookie'; // Import js-cookie
-// import '../styles/connexion.css';
+import Cookies from 'js-cookie';
 import "../styles/navbar.scss";
 
 const Connexion = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(''); // Ajout de l'état d'erreur
+    const [error, setError] = useState('');
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -20,17 +19,14 @@ const Connexion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/login', { email: email, password: password })
+        axios.post('http://localhost:8000/api/login', { email, password })
             .then(response => {
-                console.log(response.data);
-                // Set a cookie with user data
                 const userData = {
-                    email: email,
-                    token: response.data.token, // Assuming the response contains a token
+                    email: response.data.user.email,
+                    roles: response.data.user.roles
                 };
                 Cookies.set('user', JSON.stringify(userData));
 
-                // Log the cookie data
                 const loggedInUser = Cookies.get('user');
                 console.log('User Cookie:', loggedInUser);
 
@@ -38,14 +34,14 @@ const Connexion = () => {
             })
             .catch(error => {
                 console.log('There was an error!');
-                setError('Erreur lors de la connexion'); // Définir l'état d'erreur
+                setError('Erreur lors de la connexion');
             });
     };
 
     return (
         <div className="connexion-container">
             <h1>Connexion</h1>
-            {error && <div>{error}</div>} {/* Afficher l'erreur */}
+            {error && <div>{error}</div>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>

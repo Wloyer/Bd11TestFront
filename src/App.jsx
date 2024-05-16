@@ -7,6 +7,7 @@ import Inscription from './pages/Inscription';
 import NavBar from './components/Navbar';
 import CreateEvent from './pages/admin/event/create';
 import Tarif from './pages/Tarif';
+import Event from './pages/Event';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/inscription" element={<Inscription/>}/>
         <Route path="/create" element={<CreateEvent/>}/>
         <Route path="/tarif" element={<Tarif/>}/>
+        <Route path="/event" element={<Event/>}/>
       </Routes>
 
     </>

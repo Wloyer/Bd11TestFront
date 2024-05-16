@@ -44,7 +44,6 @@ describe('Connexion Component', () => {
     });
 
     it('handles login error', async () => {
-        // Configurer le mock pour la requête POST
         mock.onPost('http://localhost:8000/api/login').reply(500);
     
         render(<Connexion />);
