@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie'; // Import js-cookie
-import '../styles/connexion.css';
+// import '../styles/connexion.css';
 import "../styles/navbar.scss";
 
 const Connexion = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(''); // Ajout de l'état d'erreur
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -22,8 +23,6 @@ const Connexion = () => {
         axios.post('http://localhost:8000/api/login', { email: email, password: password })
             .then(response => {
                 console.log(response.data);
-                alert('Connexion réussie');
-
                 // Set a cookie with user data
                 const userData = {
                     email: email,
@@ -39,13 +38,14 @@ const Connexion = () => {
             })
             .catch(error => {
                 console.error('There was an error!', error);
-                alert('Erreur lors de la connexion');
+                setError('Erreur lors de la connexion'); // Définir l'état d'erreur
             });
     };
 
     return (
         <div className="connexion-container">
             <h1>Connexion</h1>
+            {error && <div>{error}</div>} {/* Afficher l'erreur */}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
