@@ -55,9 +55,6 @@ function Navbar() {
             <li>
               <Link to="/a-propos">à propos de nos</Link>
             </li>
-            <li>
-              <Link to="/Faq">Faq</Link>
-            </li>
 
             <Link to="/register">
               <button className="btn">Register</button>

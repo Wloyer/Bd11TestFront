@@ -22,12 +22,16 @@ body {
     font-weight: 400;
     background-color: var(--background);
     color: var(--text);
+    
+}
+
+.header-home{
     padding: 0 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    
+
 }
 
 
