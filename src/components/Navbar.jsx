@@ -57,10 +57,10 @@ function Navbar() {
             </li>
 
             <Link to="/register">
-              <button className="btn">Register</button>
+              <button className="btn">Inscription</button>
             </Link>
             <Link to="/login">
-              <button className="btn btn__login">Login</button>
+              <button className="btn btn__login">Se connecter</button>
             </Link>
           </ul>
         </nav>
