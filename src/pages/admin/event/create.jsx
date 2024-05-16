@@ -4,20 +4,20 @@ import axios from 'axios';
 const CreateEvent = () => {
     const [eventData, setEventData] = useState({
         name: '',
-        price: '',
+        price: 0,
         eventHour: '',
         bookingDate: '',
         eventDate: '',
         type: '',
         description: '',
         cancel: false,
-        nbTicket: '',
+        nbTicket: 0,
         isSoldOut: false,
         isAdult: false,
         isGuestAdult: false,
         location: '',
         imageEvent: '',
-        soldTickets: ''
+        soldTickets: 0
     });
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -31,30 +31,37 @@ const CreateEvent = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Données de l\'événement soumises:', eventData); 
+        const fullEventHour = `${eventData.eventHour}:00`;
+
+        const dataToSend = {
+            ...eventData,
+            eventHour: fullEventHour,
+        };
+
+        console.log( dataToSend);
         try {
-            const response = await axios.post('http://localhost:8000/api/event/new', eventData);
+            const response = await axios.post('http://localhost:8000/api/event/new', dataToSend);
             console.log('Événement créé avec succès:', response.data);
             setEventData({
                 name: '',
-                price: '',
+                price: 0,
                 eventHour: '',
                 bookingDate: '',
                 eventDate: '',
                 type: '',
                 description: '',
                 cancel: false,
-                nbTicket: '',
+                nbTicket: 0,
                 isSoldOut: false,
                 isAdult: false,
                 isGuestAdult: false,
                 location: '',
                 imageEvent: '',
-                soldTickets: ''
+                soldTickets: 0
             });
             setErrorMessage('');
         } catch (error) {
-            console.error('Une erreur s\'est produite lors de la création de l\'événement:', error.response.data);
+            console.error('Une erreur s\'est produite lors de la création de l\'événement:', error.response?.data || error.message);
             setErrorMessage('Échec de la création de l\'événement. Veuillez vérifier les données et réessayer.');
         }
     };
