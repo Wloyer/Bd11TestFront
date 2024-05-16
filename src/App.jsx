@@ -8,6 +8,7 @@ import CreateEvent from './pages/admin/event/create';
 import Tarif from './pages/Tarif';
 import Event from './pages/Event';
 import Profile from './pages/Profile';
+import About from './pages/About';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/tarif" element={<Tarif/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/profile/:id" element={<ProtectedRoute element={<Profile />} roles={['ROLE_USER']} />}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>
     </>
   )
