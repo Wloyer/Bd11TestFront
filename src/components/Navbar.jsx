@@ -10,6 +10,8 @@ function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State for login status
+  const [userRoles, setUserRoles] = useState([]); // State for user roles
+  const [userId, setUserId] = useState(null); // State for user ID
   const [size, setSize] = useState({
     width: 0,
     height: 0,
@@ -38,6 +40,8 @@ function Navbar() {
     if (userCookie) {
       const user = JSON.parse(userCookie);
       setIsLoggedIn(!!user.email); 
+      setUserRoles(user.roles); // Set user roles
+      setUserId(user.id); // Set user ID
     }
   }, []);
 
@@ -50,6 +54,8 @@ function Navbar() {
     setIsLoggedIn(false);
     window.location.href = '/'; 
   };
+
+  const hasRole = (role) => userRoles.includes(role);
 
   return (
     <header className="header">
@@ -71,6 +77,16 @@ function Navbar() {
             <li>
               <Link to="/a-propos">à propos de nos</Link>
             </li>
+            {isLoggedIn && hasRole('ROLE_USER') && (
+              <li>
+                <Link to={`/profile/${userId}`}>Profil</Link>
+              </li>
+            )}
+            {isLoggedIn && hasRole('ROLE_ADMIN') && (
+              <li>
+                <Link to="/create">Créer un Event</Link>
+              </li>
+            )}
             {isLoggedIn ? (
               <button className="btn" onClick={handleLogout}>Déconnexion</button>
             ) : (

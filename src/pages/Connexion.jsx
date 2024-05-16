@@ -21,9 +21,15 @@ const Connexion = () => {
 
         axios.post('http://localhost:8000/api/login', { email, password }, { withCredentials: true })
             .then(response => {
+                console.log('Response Data:', response.data);
                 const userData = {
                     email: response.data.user.email,
-                    roles: response.data.user.roles
+                    roles: response.data.user.roles,
+                    id: response.data.user.id,
+                    firstname: response.data.user.firstname,
+                    lastname: response.data.user.lastname,
+                    phone: response.data.user.phone,
+                    birthdate: response.data.user.birthdate,
                 };
                 Cookies.set('user', JSON.stringify(userData));
 
