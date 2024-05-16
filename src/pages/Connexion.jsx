@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie'; // Import js-cookie
 import '../styles/connexion.css';
 import "../styles/navbar.scss";
 
@@ -22,6 +23,19 @@ const Connexion = () => {
             .then(response => {
                 console.log(response.data);
                 alert('Connexion réussie');
+
+                // Set a cookie with user data
+                const userData = {
+                    email: email,
+                    token: response.data.token, // Assuming the response contains a token
+                };
+                Cookies.set('user', JSON.stringify(userData));
+
+                // Log the cookie data
+                const loggedInUser = Cookies.get('user');
+                console.log('User Cookie:', loggedInUser);
+
+                window.location.href = '/';
             })
             .catch(error => {
                 console.error('There was an error!', error);
