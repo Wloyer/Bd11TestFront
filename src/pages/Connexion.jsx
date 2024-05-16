@@ -37,7 +37,7 @@ const Connexion = () => {
                 window.location.href = '/';
             })
             .catch(error => {
-                console.error('There was an error!', error);
+                console.log('There was an error!');
                 setError('Erreur lors de la connexion'); // Définir l'état d'erreur
             });
     };

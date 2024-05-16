@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie'; // Import js-cookie
+import Cookies from 'js-cookie'; 
 import "../styles/navbar.scss";
 import logo from "../../public/logo.png";
 
@@ -34,10 +34,10 @@ function Navbar() {
   }, [size.width, menuOpen]);
 
   useEffect(() => {
-    const userCookie = Cookies.get('user'); // Get the user cookie
+    const userCookie = Cookies.get('user');
     if (userCookie) {
       const user = JSON.parse(userCookie);
-      setIsLoggedIn(!!user.email); // Set the state based on the presence of email in the cookie
+      setIsLoggedIn(!!user.email); 
     }
   }, []);
 
@@ -46,9 +46,9 @@ function Navbar() {
   };
 
   const handleLogout = () => {
-    Cookies.remove('user'); // Remove the user cookie
+    Cookies.remove('user'); 
     setIsLoggedIn(false);
-    window.location.href = '/'; // Redirect to home page
+    window.location.href = '/'; 
   };
 
   return (
