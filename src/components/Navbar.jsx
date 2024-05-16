@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie'; // Import js-cookie
 import "../styles/navbar.scss";
-import logo from "../../public/logo.png"
+import logo from "../../public/logo.png";
 
 function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for login status
   const [size, setSize] = useState({
     width: 0,
     height: 0,
   });
+
   useEffect(() => {
     const handleResize = () => {
       setSize({
@@ -30,20 +33,33 @@ function Navbar() {
     }
   }, [size.width, menuOpen]);
 
+  useEffect(() => {
+    const userCookie = Cookies.get('user'); // Get the user cookie
+    if (userCookie) {
+      const user = JSON.parse(userCookie);
+      setIsLoggedIn(!!user.email); // Set the state based on the presence of email in the cookie
+    }
+  }, []);
+
   const menuToggleHandler = () => {
-    setMenuOpen((p) => !p);
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  const handleLogout = () => {
+    Cookies.remove('user'); // Remove the user cookie
+    setIsLoggedIn(false);
+    window.location.href = '/'; // Redirect to home page
   };
 
   return (
     <header className="header">
       <div className="header__content">
         <Link to="/" className="header__content__logo">
-        <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" />
         </Link>
         <nav
           className={`${"header__content__nav"} 
-          ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
-          }`}
+          ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""}`}
         >
           <ul>
             <li>
@@ -55,13 +71,18 @@ function Navbar() {
             <li>
               <Link to="/a-propos">à propos de nos</Link>
             </li>
-
-            <Link to="/register">
-              <button className="btn">Inscription</button>
-            </Link>
-            <Link to="/login">
-              <button className="btn btn__login">Se connecter</button>
-            </Link>
+            {isLoggedIn ? (
+              <button className="btn" onClick={handleLogout}>Déconnexion</button>
+            ) : (
+              <>
+                <Link to="/register">
+                  <button className="btn">Inscription</button>
+                </Link>
+                <Link to="/login">
+                  <button className="btn btn__login">Se connecter</button>
+                </Link>
+              </>
+            )}
           </ul>
         </nav>
         <div className="header__content__toggle">
