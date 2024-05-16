@@ -19,7 +19,7 @@ const Connexion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/login', { email, password })
+        axios.post('http://localhost:8000/api/login', { email, password }, { withCredentials: true })
             .then(response => {
                 const userData = {
                     email: response.data.user.email,

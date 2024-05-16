@@ -15,7 +15,7 @@ const Event = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/event/event-informations')
+    axios.get('http://localhost:8000/api/event/event-informations', { withCredentials: true })
       .then(response => {
         setEvents(response.data.resultat);
       })
@@ -51,9 +51,7 @@ const Event = () => {
     }
 
     axios.post(`http://localhost:8000/api/event/${selectedEvent.id}/reserve`, {}, {
-      headers: {
-        'Authorization': `Bearer ${user.token}`
-      }
+      withCredentials: true
     })
     .then(response => {
       alert('Réservation réussie !');
