@@ -18,7 +18,7 @@ const Connexion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:8000/api/login', { _username: email, _password: password })
+        axios.post('http://localhost:8000/api/login', { email: email, password: password })
             .then(response => {
                 console.log(response.data);
                 alert('Connexion réussie');
