@@ -40,8 +40,8 @@ function Navbar() {
     if (userCookie) {
       const user = JSON.parse(userCookie);
       setIsLoggedIn(!!user.email); 
-      setUserRoles(user.roles); // Set user roles
-      setUserId(user.id); // Set user ID
+      setUserRoles(user.roles || []); 
+      setUserId(user.id); 
     }
   }, []);
 
