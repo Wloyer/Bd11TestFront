@@ -6,6 +6,7 @@ import Connexion from './pages/Connexion';
 import Inscription from './pages/Inscription';
 import NavBar from './components/Navbar';
 import CreateEvent from './pages/admin/event/create';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/inscription" element={<Inscription />} />
         <Route path="/create" element={<CreateEvent />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
 
     </>

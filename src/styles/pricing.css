@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+
+.tickets{
+    display: flex;
+    justify-content: space-between;
+    height: 370px;
+    padding-top: 16px;
+    border-top: solid 1px white;
+    width: 1170px;
+}
+
+
+body{
+    overflow: scroll;
+    font-family: 'Manrope';
+}
+
+.img{
+    width: 435px;
+}
+
+.drancy{
+    width: 435px;
+}
+
+.tickets p{
+    width: 550px;
+}
