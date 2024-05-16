@@ -50,13 +50,10 @@ function Navbar() {
               <Link to="/">Events</Link>
             </li>
             <li>
-              <Link to="/profile">Tarifs</Link>
+              <Link to="/Tarif">Tarifs</Link>
             </li>
             <li>
-              <Link to="/Works">à propos de nos</Link>
-            </li>
-            <li>
-              <Link to="/help">Faq</Link>
+              <Link to="/a-propos">à propos de nos</Link>
             </li>
 
             <Link to="/register">

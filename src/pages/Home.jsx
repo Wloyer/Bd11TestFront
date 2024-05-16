@@ -3,17 +3,16 @@ import '../styles/home.css';
 import Title from '../components/home/Title';
 import Button from '../components/home/Button';
 import Card from '../components/event/Card.jsx';
+import HeaderHome from '../components/home/header.jsx';
+import FAQ from '../components/faq.jsx';
 
 function Home() {
   return (
     <>
-      <Title />
-      <Button href="e" target="_blank" className="first">Dérniere Event</Button>
-      <Button href="" target="_blank" className="sec">Découvrir Nous Event</Button>
-      <Button href="" target="_blank" className="third">Promos</Button>
-      <Card />
+      <HeaderHome/>
+      <FAQ/>
     </>
   );
 }
 
-export default Home; // Ensure the component is named correctly and exported
+export default Home; 

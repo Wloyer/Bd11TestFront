@@ -4,7 +4,7 @@ function Button({ href, target, className, children }) {
   return (
     <a href={href} target={target} className={`button custom-button ${className}`}>
       <button>{children}</button>
-      <span></span>
+      <span className='span-home'></span>
     </a>
   );
 }
