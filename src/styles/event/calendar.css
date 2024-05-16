@@ -1,0 +1,62 @@
+
+.rbc-event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 123, 255, 0.9); 
+  border: 1px solid rgba(0, 123, 255, 0.9); 
+  border-radius: 4px; 
+  overflow: hidden;
+  color: #fff; 
+}
+
+.event-container {
+  text-align: center;
+  padding: 5px;
+  color: #fff; 
+}
+
+.event-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff; 
+}
+
+.event-image {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  margin-top: 5px;
+}
+
+.event-date,
+.event-price {
+  font-size: 12px;
+  color: #fff; 
+}
+
+
+.rbc-month-view {
+  background-color: #1e1e1e; 
+}
+
+.rbc-day-bg,
+.rbc-off-range-bg,
+.rbc-off-range {
+  background-color: #1e1e1e; 
+}
+
+.rbc-date-cell {
+  color: #fff; 
+}
+
+.rbc-header {
+  background-color: #1e1e1e; 
+  color: #fff; 
+}
+
+.rbc-today {
+  background-color: rgba(0, 123, 255, 0.2) !important; 
+}
