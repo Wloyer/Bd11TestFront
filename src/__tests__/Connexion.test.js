@@ -5,7 +5,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import Connexion from '../pages/Connexion';
 
-// Mock axios and js-cookie
+
 jest.mock('axios');
 jest.mock('js-cookie', () => ({
   get: jest.fn(),
@@ -15,7 +15,7 @@ jest.mock('js-cookie', () => ({
 
 describe('Connexion Component', () => {
   it('handles successful login', async () => {
-    // Mock the axios post response
+    
     axios.post.mockResolvedValue({
       data: {
         user: {
@@ -31,19 +31,17 @@ describe('Connexion Component', () => {
       },
     });
 
-    // Render the component
     const { getByLabelText, getByText } = render(<Connexion />);
 
-    // Fill out the form
+    
     fireEvent.change(getByLabelText(/email/i), { target: { value: 'test@gmail.com' } });
     fireEvent.change(getByLabelText(/mot de passe/i), { target: { value: 'azertyuiop' } });
 
-    // Submit the form
     fireEvent.click(getByText(/se connecter/i));
 
-    // Wait for the login process to complete
+    
     await waitFor(() => {
-      // Check if the cookie has been set
+      
       expect(Cookies.set).toHaveBeenCalledWith('user', JSON.stringify({
         email: 'test@gmail.com',
         roles: ['ROLE_USER'],
@@ -54,7 +52,7 @@ describe('Connexion Component', () => {
         birthdate: '2002-06-10',
       }));
 
-      // Check if the page redirects to the home page
+      
       expect(window.location.href).toMatch(/\/$/);
     });
   });
