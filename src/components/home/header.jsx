@@ -9,8 +9,8 @@ function Home() {
     <>
     <div className='header-home'>
       <Title />
-      <Button href="/Event"  className="first">Dérniere Event</Button>
-      <Button href="/Event"  className="sec">Découvrir Nous Event</Button>
+      <Button href="/Event"  className="first">Dérnierement à l'affiche</Button>
+      <Button href="/Event"  className="sec">Découvrir Nos Events</Button>
       <Button href="/tarif"  className="third">Promos</Button>
     </div>
     </>

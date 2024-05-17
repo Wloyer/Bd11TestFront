@@ -9,9 +9,9 @@ import logo from "../../public/logo.png";
 function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // State for login status
-  const [userRoles, setUserRoles] = useState([]); // State for user roles
-  const [userId, setUserId] = useState(null); // State for user ID
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [userRoles, setUserRoles] = useState([]); 
+  const [userId, setUserId] = useState(null); 
   const [size, setSize] = useState({
     width: 0,
     height: 0,
@@ -75,7 +75,7 @@ function Navbar() {
               <Link to="/Tarif">Tarifs</Link>
             </li>
             <li>
-              <Link to="/a-propos">à propos de nos</Link>
+              <Link to="/about">à propos de nos</Link>
             </li>
             {isLoggedIn && hasRole('ROLE_USER') && (
               <li>
