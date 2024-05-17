@@ -69,7 +69,7 @@ function Navbar() {
         >
           <ul>
             <li>
-              <Link to="/">Events</Link>
+              <Link to="/event">Events</Link>
             </li>
             <li>
               <Link to="/Tarif">Tarifs</Link>
