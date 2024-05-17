@@ -8,7 +8,7 @@ import CreateEvent from './pages/admin/event/create';
 import Tarif from './pages/Tarif';
 import Event from './pages/Event';
 import Profile from './pages/Profile';
-import About from './pages/About';
+import About from './pages/about';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
