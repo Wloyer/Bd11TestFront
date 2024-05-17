@@ -1,3 +1,14 @@
+<!-- POUR Démarrer Le FRONTEND -->
+cd /c:/wamp64/www/Projet_formation/MasterClasse/Bd11TestFront/
+npm install
+<!-- Pour lancer le front -->
+npm run dev 
+
+<!-- LANCER LES TESTS -->
+npm test
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
